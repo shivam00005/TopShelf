@@ -12,8 +12,6 @@ import {
   ToastAndroid,
 } from 'react-native';
 import {COLOURS, Items} from '../database/Database';
-import Entypo from 'react-native-vector-icons/Entypo';
-import Ionicons from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ProductInfo = ({route, navigation}) => {
@@ -136,16 +134,16 @@ const ProductInfo = ({route, navigation}) => {
               paddingLeft: 16,
             }}>
             <TouchableOpacity onPress={() => navigation.goBack('Home')}>
-              <Entypo
-                name="chevron-left"
+              <Text
                 style={{
                   fontSize: 18,
-                  color: COLOURS.backgroundDark,
+                  color: 'black',
                   padding: 12,
-                  backgroundColor: COLOURS.white,
                   borderRadius: 10,
-                }}
-              />
+                  backgroundColor: COLOURS.backgroundLight,
+                }}>
+                Back
+              </Text>
             </TouchableOpacity>
           </View>
           <FlatList
@@ -206,14 +204,13 @@ const ProductInfo = ({route, navigation}) => {
               alignItems: 'center',
               marginVertical: 14,
             }}>
-            <Entypo
-              name="shopping-cart"
+            <Text
               style={{
                 fontSize: 18,
                 color: COLOURS.blue,
-                marginRight: 6,
-              }}
-            />
+              }}>
+              &#x1F6D2;
+            </Text>
             <Text
               style={{
                 fontSize: 12,
@@ -240,16 +237,13 @@ const ProductInfo = ({route, navigation}) => {
               }}>
               {product.productName}
             </Text>
-            <Ionicons
-              name="link-outline"
+            <Text
               style={{
-                fontSize: 24,
+                fontSize: 18,
                 color: COLOURS.blue,
-                backgroundColor: COLOURS.blue + 10,
-                padding: 8,
-                borderRadius: 100,
-              }}
-            />
+              }}>
+              &#9741;
+            </Text>
           </View>
           <Text
             style={{
@@ -291,23 +285,17 @@ const ProductInfo = ({route, navigation}) => {
                   borderRadius: 100,
                   marginRight: 10,
                 }}>
-                <Entypo
-                  name="location-pin"
+                <Text
                   style={{
-                    fontSize: 16,
+                    fontSize: 18,
                     color: COLOURS.blue,
-                  }}
-                />
+                  }}>
+                  &#128666;
+                </Text>
               </View>
               <Text> Rustaveli Ave 57,{'\n'}17-001, Batume</Text>
             </View>
-            <Entypo
-              name="chevron-right"
-              style={{
-                fontSize: 22,
-                color: COLOURS.backgroundDark,
-              }}
-            />
+            <Text style={{fontSize: 22, color: COLOURS.black}}>&#10148;</Text>
           </View>
           <View
             style={{

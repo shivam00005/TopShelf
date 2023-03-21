@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {COLOURS, Items} from '../database/Database';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const MyCart = ({navigation}) => {
   const [product, setProduct] = useState();
@@ -148,10 +147,10 @@ const MyCart = ({navigation}) => {
                   maxWidth: '85%',
                   marginRight: 4,
                 }}>
-                &#8377;{data.productPrice}
+                ${data.productPrice}
               </Text>
               <Text>
-                (~&#8377;
+                (~$
                 {data.productPrice + data.productPrice / 20})
               </Text>
             </View>
@@ -176,13 +175,13 @@ const MyCart = ({navigation}) => {
                   borderColor: COLOURS.backgroundMedium,
                   opacity: 0.5,
                 }}>
-                <MaterialCommunityIcons
-                  name="minus"
+                <Text
                   style={{
-                    fontSize: 16,
+                    fontSize: 20,
                     color: COLOURS.backgroundDark,
-                  }}
-                />
+                  }}>
+                  -
+                </Text>
               </View>
               <Text>1</Text>
               <View
@@ -194,26 +193,27 @@ const MyCart = ({navigation}) => {
                   borderColor: COLOURS.backgroundMedium,
                   opacity: 0.5,
                 }}>
-                <MaterialCommunityIcons
-                  name="plus"
+                <Text
                   style={{
-                    fontSize: 16,
+                    fontSize: 20,
                     color: COLOURS.backgroundDark,
-                  }}
-                />
+                  }}>
+                  +
+                </Text>
               </View>
             </View>
             <TouchableOpacity onPress={() => removeItemFromCart(data.id)}>
-              <MaterialCommunityIcons
+              <Text
                 name="delete-outline"
                 style={{
-                  fontSize: 16,
-                  color: COLOURS.backgroundDark,
+                  fontSize: 20,
+                  color: 'red',
                   backgroundColor: COLOURS.backgroundLight,
-                  padding: 8,
+                  padding: (0, 3),
                   borderRadius: 100,
-                }}
-              />
+                }}>
+                x
+              </Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -240,16 +240,16 @@ const MyCart = ({navigation}) => {
             alignItems: 'center',
           }}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <MaterialCommunityIcons
-              name="chevron-left"
+            <Text
               style={{
                 fontSize: 18,
-                color: COLOURS.backgroundDark,
+                color: 'black',
                 padding: 12,
+                borderRadius: 10,
                 backgroundColor: COLOURS.backgroundLight,
-                borderRadius: 12,
-              }}
-            />
+              }}>
+              Back
+            </Text>
           </TouchableOpacity>
           <Text
             style={{
@@ -314,13 +314,13 @@ const MyCart = ({navigation}) => {
                     borderRadius: 10,
                     marginRight: 18,
                   }}>
-                  <MaterialCommunityIcons
-                    name="truck-delivery-outline"
+                  <Text
                     style={{
                       fontSize: 18,
                       color: COLOURS.blue,
-                    }}
-                  />
+                    }}>
+                    &#128666;
+                  </Text>
                 </View>
                 <View>
                   <Text
@@ -343,10 +343,7 @@ const MyCart = ({navigation}) => {
                   </Text>
                 </View>
               </View>
-              <MaterialCommunityIcons
-                name="chevron-right"
-                style={{fontSize: 22, color: COLOURS.black}}
-              />
+              <Text style={{fontSize: 22, color: COLOURS.black}}>&#10148;</Text>
             </View>
           </View>
           <View
@@ -417,10 +414,7 @@ const MyCart = ({navigation}) => {
                   </Text>
                 </View>
               </View>
-              <MaterialCommunityIcons
-                name="chevron-right"
-                style={{fontSize: 22, color: COLOURS.black}}
-              />
+              <Text style={{fontSize: 22, color: COLOURS.black}}>&#10148;</Text>
             </View>
           </View>
           <View
@@ -463,7 +457,7 @@ const MyCart = ({navigation}) => {
                   color: COLOURS.black,
                   opacity: 0.8,
                 }}>
-                &#8377;{total}.00
+                ${total}.00
               </Text>
             </View>
             <View
@@ -490,7 +484,7 @@ const MyCart = ({navigation}) => {
                   color: COLOURS.black,
                   opacity: 0.8,
                 }}>
-                &#8377;{total / 20}
+                ${total / 20}
               </Text>
             </View>
             <View
@@ -515,7 +509,7 @@ const MyCart = ({navigation}) => {
                   fontWeight: '500',
                   color: COLOURS.black,
                 }}>
-                &#8377;{total + total / 20}
+                ${total + total / 20}
               </Text>
             </View>
           </View>
