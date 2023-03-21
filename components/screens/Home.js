@@ -113,20 +113,12 @@ const Home = ({navigation}) => {
                 flexDirection: 'row',
                 alignItems: 'center',
               }}>
-              <FontAwesome
-                name="circle"
-                style={{
-                  fontSize: 12,
-                  marginRight: 6,
-                  color: COLOURS.green,
-                }}
-              />
               <Text
                 style={{
                   fontSize: 12,
                   color: COLOURS.green,
                 }}>
-                Available
+                &#9677; Available
               </Text>
             </View>
           ) : (
@@ -135,25 +127,17 @@ const Home = ({navigation}) => {
                 flexDirection: 'row',
                 alignItems: 'center',
               }}>
-              <FontAwesome
-                name="circle"
-                style={{
-                  fontSize: 12,
-                  marginRight: 6,
-                  color: COLOURS.red,
-                }}
-              />
               <Text
                 style={{
                   fontSize: 12,
                   color: COLOURS.red,
                 }}>
-                Unavailable
+                &#9677; Unavailable
               </Text>
             </View>
           )
         ) : null}
-        <Text>&#8377; {data.productPrice}</Text>
+        <Text>$ {data.productPrice}</Text>
       </TouchableOpacity>
     );
   };
@@ -175,29 +159,28 @@ const Home = ({navigation}) => {
             padding: 16,
           }}>
           <TouchableOpacity>
-            <Entypo
-              name="shopping-bag"
+            <Text
               style={{
                 fontSize: 18,
-                color: COLOURS.backgroundMedium,
+                color: 'black',
                 padding: 12,
                 borderRadius: 10,
                 backgroundColor: COLOURS.backgroundLight,
-              }}
-            />
+              }}>
+              Home
+            </Text>
           </TouchableOpacity>
           <TouchableOpacity onPress={() => navigation.navigate('MyCart')}>
-            <MaterialCommunityIcons
-              name="cart"
+            <Text
               style={{
                 fontSize: 18,
-                color: COLOURS.backgroundMedium,
+                color: 'black',
                 padding: 12,
                 borderRadius: 10,
-                borderWidth: 1,
-                borderColor: COLOURS.backgroundLight,
-              }}
-            />
+                backgroundColor: COLOURS.backgroundLight,
+              }}>
+              Cart
+            </Text>
           </TouchableOpacity>
         </View>
         <View
