@@ -5,6 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Home from './components/screens/Home';
 import MyCart from './components/screens/MyCart';
 import ProductInfo from './components/screens/ProductInfo';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const App = () => {
   const Stack = createNativeStackNavigator();
